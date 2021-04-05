@@ -11,7 +11,7 @@ export const commonConfig: Configuration = {
   context: projectRoot,
   entry: resolvePath(projectRoot, "./src/index.tsx"),
   output: {
-    publicPath: "/",
+    publicPath: process.env.NODE_ENV ? "/gh-pages" : "/",
     path: resolvePath(projectRoot, "./dist"),
     filename: "js/[name]-[fullhash].bundle.js",
     hashSalt: projectName,

@@ -5,6 +5,8 @@ steps:
   - name: build
     image: node:14
     depends_on: [clone]
+    environmemt:
+      NODE_ENV: gh-pages
     # volumes:
     #   - name: cache
     #     path: /root/.m2
