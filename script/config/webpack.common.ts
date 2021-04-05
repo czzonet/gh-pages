@@ -72,7 +72,6 @@ export const commonConfig: Configuration = {
             loader: "file-loader",
             options: {
               publicPath: publicPathSvg,
-              outputPath: "image",
             },
           },
         ],
