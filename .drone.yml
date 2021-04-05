@@ -10,6 +10,18 @@ steps:
     #     path: /root/.m2
     commands:
       - yarn run build
+
+  - name: publish
+    image: plugins/gh-pages
+    pull: always
+    settings:
+      - username:
+        from_secret: username
+      - password:
+        from_secret: password
+      pages_directory: dist
+      
+  #         from_secret: docker_pass
   #   - name: 构建镜像
   #     image: plugins/docker
   #     volumes:
