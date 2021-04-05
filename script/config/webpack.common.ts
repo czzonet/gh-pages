@@ -8,6 +8,7 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
 
 const publicPath = process.env.NODE_ENV ? "/gh-pages" : "/";
+const publicPathSvg = process.env.NODE_ENV ? "gh-pages" : undefined;
 
 export const commonConfig: Configuration = {
   context: projectRoot,
@@ -70,7 +71,7 @@ export const commonConfig: Configuration = {
           {
             loader: "file-loader",
             options: {
-              publicPath,
+              publicPath: publicPathSvg,
             },
           },
         ],
