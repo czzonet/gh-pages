@@ -7,7 +7,7 @@ import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
 
-const publicPath = process.env.NODE_ENV ? "/gh-pages" : "/";
+const publicPath = process.env.NODE_ENV ? "/gh-pages/" : "/";
 // const publicPathSvg = process.env.NODE_ENV ? "gh-pages" : undefined;
 
 export const commonConfig: Configuration = {
