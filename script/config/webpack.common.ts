@@ -7,11 +7,13 @@ import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
 
+const publicPath = process.env.NODE_ENV ? "/gh-pages" : "/";
+
 export const commonConfig: Configuration = {
   context: projectRoot,
   entry: resolvePath(projectRoot, "./src/index.tsx"),
   output: {
-    publicPath: process.env.NODE_ENV ? "/gh-pages" : "/",
+    publicPath: publicPath,
     path: resolvePath(projectRoot, "./dist"),
     filename: "js/[name]-[fullhash].bundle.js",
     hashSalt: projectName,
@@ -64,7 +66,14 @@ export const commonConfig: Configuration = {
       },
       {
         test: /\.svg$/,
-        use: ["file-loader"],
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              publicPath,
+            },
+          },
+        ],
       },
     ],
   },
