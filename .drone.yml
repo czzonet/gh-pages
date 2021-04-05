@@ -15,12 +15,12 @@ steps:
     image: plugins/gh-pages
     pull: always
     settings:
-      - username:
+      username:
         from_secret: username
-      - password:
+      password:
         from_secret: password
       pages_directory: dist
-      
+
   #         from_secret: docker_pass
   #   - name: 构建镜像
   #     image: plugins/docker
