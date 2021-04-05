@@ -16,7 +16,7 @@ steps:
   - name: publish
     image: plugins/gh-pages
     depends_on: [build]
-    pull: always
+    # pull: always
     settings:
       username:
         from_secret: username
