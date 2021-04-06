@@ -7,7 +7,7 @@ import { ScrollBar } from "./components/ScrollBar/ScrollBar";
 export default function App() {
   return (
     <div className={styles["app"]}>
-      <h1>React</h1>
+      <h1>Blog</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
         reiciendis voluptate, perferendis maiores possimus voluptatem officia
