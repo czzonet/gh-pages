@@ -14,6 +14,9 @@ export default function App() {
         harum, voluptas accusamus nobis commodi aliquid doloremque eaque
         eligendi, dolores corporis ipsam quod non.
       </p>
+      <ul>
+        <li>{new Date().toLocaleString()}</li>
+      </ul>
       <input type="text" />
       <ButtonDisable></ButtonDisable>
       <TestButton></TestButton>
