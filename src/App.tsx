@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./AppStyle.scss";
-import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Link, Route, Switch } from "react-router-dom";
 import { Markdown } from "./components/Markdown";
 
 import md from "./articles/博客系统/博客系统.md";
