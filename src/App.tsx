@@ -1,26 +1,48 @@
 import React from "react";
-import { ButtonDisable } from "./components/ButtonDisable";
 import styles from "./AppStyle.scss";
-import { TestButton } from "./components/TestButton/TestButton";
-import { ScrollBar } from "./components/ScrollBar/ScrollBar";
+import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import { Markdown } from "./components/Markdown";
 
-export default function App() {
+import md from "./articles/博客系统/博客系统.md";
+import md2 from "./articles/函数组合compose使用reduce实现.md";
+
+export const App = () => {
   return (
-    <div className={styles["app"]}>
-      <h1>Blog</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-        reiciendis voluptate, perferendis maiores possimus voluptatem officia
-        harum, voluptas accusamus nobis commodi aliquid doloremque eaque
-        eligendi, dolores corporis ipsam quod non.
-      </p>
-      <ul>
-        <li>{new Date().toLocaleString()}</li>
-      </ul>
-      <input type="text" />
-      <ButtonDisable></ButtonDisable>
-      <TestButton></TestButton>
-      <ScrollBar></ScrollBar>
-    </div>
+    <Router>
+      <div className={styles.app}>
+        <div className={styles.header}>博客</div>
+
+        <div className={styles.body}>
+          <div className={styles.sider}>
+            <Link to={`/ac1`}> 博客系统</Link>
+            <Link to={`/ac2`}> 函数组合compose使用reduce实现</Link>
+          </div>
+
+          <div className={styles.content}>
+            <Switch>
+              <Route
+                path={`/ac1`}
+                component={() => <Markdown content={md}></Markdown>}
+              />
+              <Route
+                path={`/ac2`}
+                component={() => <Markdown content={md2}></Markdown>}
+              />
+              <Route
+                path={`/`}
+                exact
+                component={() => <Markdown content={md}></Markdown>}
+              />
+            </Switch>
+          </div>
+
+          {/* <div className={styles.tableOfContent}>
+            <div>基础原理</div>
+            <div>问题</div>
+            <div>实现</div>
+          </div> */}
+        </div>
+      </div>
+    </Router>
   );
-}
+};

@@ -1,5 +1,5 @@
 {
-  "name": "react-typescript-template",
+  "name": "gh-pages",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/czzonet/react-typescript-template.git"
+    "url": "git+https://github.com/czzonet/gh-pages.git"
   },
   "author": "",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/czzonet/react-typescript-template/issues"
+    "url": "https://github.com/czzonet/gh-pages/issues"
   },
-  "homepage": "https://github.com/czzonet/react-typescript-template#readme",
+  "homepage": "https://github.com/czzonet/gh-pages#readme",
   "browserslist": [
     "last 2 versions",
     "Firefox ESR",
@@ -45,11 +45,13 @@
     "connect-history-api-fallback": "^1.6.0",
     "copy-webpack-plugin": "^8.0.0",
     "cors": "^2.8.5",
-    "css-loader": "^5.1.1",
+    "css-loader": "^5.2.6",
     "express": "^4.17.1",
     "friendly-errors-webpack-plugin": "^1.7.0",
+    "highlight.js": "^11.0.1",
     "html-webpack-plugin": "^5.2.0",
     "http-proxy-middleware": "^1.0.6",
+    "markdown-loader": "^6.0.0",
     "node-sass": "^5.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -65,10 +67,12 @@
     "webpackbar": "^5.0.0-3"
   },
   "dependencies": {
-    "antd": "^4.14.0",
+    "@types/react-router-dom": "^5.1.7",
     "chalk": "^4.1.0",
     "file-loader": "^6.2.0",
     "get-port": "^5.1.1",
-    "log-symbols": "^4.0.0"
+    "html-loader": "^2.1.2",
+    "log-symbols": "^4.0.0",
+    "react-router-dom": "^5.2.0"
   }
 }
