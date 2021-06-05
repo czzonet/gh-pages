@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\"",
     "start": "ts-node --files -P ./script/tsconfig.json ./script/start.ts",
     "builsrc": "NODE_ENV=prod ts-node --files -P ./script/tsconfig.json ./script/build.ts",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist -b gh-pages",
     "dependence": "yarn install",
     "build": "yarn run dependence && yarn run builsrc"
   },
