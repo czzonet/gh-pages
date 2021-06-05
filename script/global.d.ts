@@ -1,1 +1,1 @@
-declare module "friendly-errors-webpack-plugin";
+declare module "@soda/friendly-errors-webpack-plugin";

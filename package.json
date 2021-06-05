@@ -47,7 +47,6 @@
     "cors": "^2.8.5",
     "css-loader": "^5.2.6",
     "express": "^4.17.1",
-    "friendly-errors-webpack-plugin": "^1.7.0",
     "highlight.js": "^11.0.1",
     "html-webpack-plugin": "^5.2.0",
     "http-proxy-middleware": "^1.0.6",
@@ -67,6 +66,7 @@
     "webpackbar": "^5.0.0-3"
   },
   "dependencies": {
+    "@soda/friendly-errors-webpack-plugin": "^1.8.0",
     "@types/react-router-dom": "^5.1.7",
     "chalk": "^4.1.0",
     "file-loader": "^6.2.0",
