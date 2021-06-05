@@ -6,8 +6,10 @@ import webpackBuildNotifier from "webpack-build-notifier";
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
+import highlight from "highlight.js";
 
-const publicPath = process.env.NODE_ENV ? "/gh-pages/" : "/";
+const isDev = process.env.NODE_ENV != "prod";
+const publicPath = isDev ? "/" : "/gh-pages/";
 // const publicPathSvg = process.env.NODE_ENV ? "gh-pages" : undefined;
 
 export const commonConfig: Configuration = {
@@ -39,15 +41,16 @@ export const commonConfig: Configuration = {
             options: {
               modules: {
                 localIdentName: "[local]--[hash:base64:5]",
+                exportLocalsConvention: "camelCase",
               },
-              sourceMap: true,
+              sourceMap: isDev,
               importLoaders: 1,
             },
           },
           {
             loader: "sass-loader",
             options: {
-              sourceMap: true,
+              sourceMap: isDev,
             },
           },
         ],
@@ -60,7 +63,7 @@ export const commonConfig: Configuration = {
             loader: "css-loader",
             options: {
               modules: true,
-              sourceMap: true,
+              sourceMap: isDev,
             },
           },
         ],
@@ -72,6 +75,31 @@ export const commonConfig: Configuration = {
             loader: "file-loader",
             options: {
               // publicPath: publicPathSvg,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.md$/,
+        use: [
+          {
+            loader: "html-loader",
+          },
+          {
+            loader: "markdown-loader",
+            options: {
+              highlight: (code: string, lang: string) => {
+                if (
+                  !lang ||
+                  ["text", "literal", "nohighlight"].includes(lang)
+                ) {
+                  return `<pre class="hljs">${code}</pre>`;
+                }
+
+                const html = highlight.highlight(lang, code).value;
+
+                return `<span class="hljs">${html}</span>`;
+              },
             },
           },
         ],
@@ -92,7 +120,7 @@ export const commonConfig: Configuration = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: "*",
+          from: "**/*",
           to: resolvePath(projectRoot, "./dist"),
           context: resolvePath(projectRoot, "./public"),
           filter: (resourcePath) =>
