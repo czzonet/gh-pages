@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\"",
     "start": "ts-node --files -P ./script/tsconfig.json ./script/start.ts",
     "builsrc": "NODE_ENV=prod ts-node --files -P ./script/tsconfig.json ./script/build.ts",
+    "deploy": "gh-pages -d build",
     "dependence": "yarn install",
     "build": "yarn run dependence && yarn run builsrc"
   },
@@ -47,6 +48,7 @@
     "cors": "^2.8.5",
     "css-loader": "^5.2.6",
     "express": "^4.17.1",
+    "gh-pages": "^3.2.0",
     "highlight.js": "^11.0.1",
     "html-webpack-plugin": "^5.2.0",
     "http-proxy-middleware": "^1.0.6",
