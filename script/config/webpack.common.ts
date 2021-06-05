@@ -1,7 +1,7 @@
 import { Configuration } from "webpack";
 import { projectName, projectRoot, resolvePath } from "../env";
 import webpackBar from "webpackbar";
-import FriendlyErrorsWebpackPlugin from "friendly-errors-webpack-plugin";
+import FriendlyErrorsWebpackPlugin from "@soda/friendly-errors-webpack-plugin";
 import webpackBuildNotifier from "webpack-build-notifier";
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
